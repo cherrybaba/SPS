@@ -26,3 +26,33 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+/**
+ * Adds a random information about me to the page.
+ */
+async function getRandomAboutMeUsingAsyncAwait() {
+  const response = await fetch('/random-aboutMe');
+  const aboutMe = await response.text();
+  document.getElementById('aboutMe-container').innerText = aboutMe;
+}
+
+function getComments() {
+  fetch('/text').then(response => response.json()).then((comments) => {
+      console.log('getComments()!');
+      console.log(comments);
+
+    const comment_container = document.getElementById('comment-container');
+    comment_container.innerHTML = '';
+    comments.forEach((comment) => {
+      console.log(comment);
+      comment_container.appendChild(createListElement(comment));
+    });
+  })
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text.title;
+  return liElement;
+}

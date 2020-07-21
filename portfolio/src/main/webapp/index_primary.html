@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body onload="getComments()">
+    <div id="content">
+      <h1>A Portfolio</h1>
+      <p>This is a portfolio. My name is &lt;Hello World/&gt;.</p>
+      <p>Here is my photo.👇</p>
+      <img src="images/helloworld.png"/>
+      <p> </p>
+      <p>Welcome to my home. It is messy. But don't worry, it will be better soon!</p>
+      <p>Click here to get a greeting:</p>
+      <button onclick="addRandomGreeting()">Hello</button>
+      <div id="greeting-container"></div>
+      <p> </p>
+      <p>Click here to know somthing about my master (I pick these information from her diary.🤫):</p>
+      <button onclick="getRandomAboutMeUsingAsyncAwait()">:)</button>
+      <div id="aboutMe-container"></div>
+      <p> </p>
+      <p>Click <a href="movies.html">here</a> to see her favorite movies!</p> 
+      <p>Click<a href=/_ah/admin></a></p> 
+
+      <br>
+      <h1>Comments</h1>
+      <form action="/text" method="POST">
+
+        <p>Please enter your comment here:</p>
+        <textarea name="text-input"></textarea>
+        <br/>
+        <input type="submit"/>
+      </form>
+
+      <div id="comment-container"></div>
+
+      <br>
+    </div>
+  </body>
+     
+</html>
